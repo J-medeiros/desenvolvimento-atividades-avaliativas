@@ -1,0 +1,64 @@
+/* ...existing code... */
+:root {
+  --bg: #f0f0f1;
+  --card: #ffffff;
+  --text: #333;
+  --accent: #2b7cff;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  margin: 0;
+  color: var(--text);
+}
+.app-header {
+  padding: 24px 16px;
+  text-align: center;
+}
+.app-header h1 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 2rem;
+}
+
+.chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 16px 24px 40px;
+  align-items: start;
+}
+.chart-card {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  min-height: 320px;
+}
+.chart-card h2 {
+  font-size: 1rem;
+  margin: 0 0 12px;
+  color: #222;
+}
+.chart-card.full {
+  grid-column: 1 / -1;
+  min-height: 380px;
+}
+
+/* responsivo */
+@media (max-width: 860px) {
+  .chart-grid {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+  .chart-card {
+    min-height: 260px;
+  }
+  .chart-card.full {
+    min-height: 320px;
+  }
+}
+/* ...existing code... */

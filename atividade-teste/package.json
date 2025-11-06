@@ -1,0 +1,22 @@
+{
+  "name": "atividade-teste",
+  "version": "1.0.0",
+  "description": "Projeto de gráficos utilizando Vite e React",
+  "main": "src/main.jsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "recharts": "^2.0.0"
+  },
+  "devDependencies": {
+    "vite": "^3.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
