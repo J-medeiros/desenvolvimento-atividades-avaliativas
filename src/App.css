@@ -1,4 +1,3 @@
-/* ...existing code... */
 :root {
   --bg: #f0f0f1;
   --card: #ffffff;
@@ -45,7 +44,8 @@ body {
 }
 .chart-card.full {
   grid-column: 1 / -1;
-  min-height: 380px;
+  min-height: 0; /* importante: deixa o filho controlar a altura */
+  width: 100%;
 }
 
 /* responsivo */
@@ -61,4 +61,30 @@ body {
     min-height: 320px;
   }
 }
-/* ...existing code... */
+
+/* Regras para o mapa */
+.map-card {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  background: var(--card);
+  /* altura automática, mas o conteúdo (leaflet) tem um mínimo */
+  height: auto;
+}
+
+/* Define altura mínima e comportamento responsivo do container do Leaflet.
+   O MapContainer cria .leaflet-container; garantimos que tenha altura explícita. */
+.map-card .leaflet-container {
+  width: 100%;
+  height: min(60vh, 720px); /* ocupa até 60% da altura da viewport, limitando */
+  min-height: 360px; /* mínimo exigido */
+}
+
+/* opcional: centralizar o conteúdo em telas muito grandes */
+@media (min-width: 1200px) {
+  .chart-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
